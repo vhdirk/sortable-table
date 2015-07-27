@@ -1,12 +1,30 @@
-<link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="bower_components/polymer/polymer.html">
 
-<polymer-element name="html-echo" attributes="html">
+<dom-module id="html-echo">
+
+	<template>
+	</template>
+
 	<script>
-	Polymer('html-echo', {
+	Polymer({
+		is: 'html-echo',
+
+		properties:{
+			html:{
+				type: String,
+				notify: true,
+				value: 'lalala'
+			}
+		},
+
+		listeners:{
+			'html-changed': 'htmlChanged'
+		},
+
 		htmlChanged: function() {
 			// WARNING: potential XSS vulnerability if `html` comes from an untrusted source
 			this.innerHTML = this.html;
 		}
 	});
 	</script>
-</polymer-element> 
+</polymer-element>

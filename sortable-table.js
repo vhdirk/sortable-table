@@ -2,7 +2,7 @@
 /*global Polymer, PolymerExpressions, JSON5, PathObserver, MutationObserver, ObjectObserver,
          columnDragMixin, rowDragMixin, rowFiltersMixin, rowEditorMixin */
 "use strict";
-Polymer(Polymer.mixin({
+SortableTableBehaviorImpl = {
     columnWatches: null,
     dataSize: 0,
     dataSource: null,
@@ -645,4 +645,12 @@ Polymer(Polymer.mixin({
         this.updateEditChanged();
         this.forceFooterRefresh++;
     }
-}, columnDragMixin, rowDragMixin, rowFiltersMixin, rowEditorMixin));
+};
+
+SortableTableBehavior = [SortableTableBehavior, columnDragMixin, rowDragMixin, rowFiltersMixin, rowEditorMixin];
+
+Polymer({
+  is: "sortable-table",
+  behaviors: [SortableTableBehavior]
+
+});

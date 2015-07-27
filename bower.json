@@ -31,16 +31,14 @@
   "dependencies": {
     "json5": "json5#>=0.4.0",
     "time-elements": "time-elements#>=0.4.0",
-    "polymer": "Polymer/polymer#^0.5.5",
-    "core-ajax": "Polymer/core-ajax#^0.5.5",
-    "core-dropdown": "Polymer/core-dropdown#^0.5.5"
+    "polymer": "Polymer/polymer#^1.0.0",
+    "iron-ajax": "PolymerElements/iron-ajax#^1.0.0",
+    "iron-dropdown": "PolymerElements/iron-dropdown#^1.0.0"
   },
   "devDependencies": {
     "web-component-tester": "Polymer/web-component-tester#>=2.2.6",
     "bootstrap": "bootstrap#>=3.3.1",
-    "polymer-jsonp": "polymer/polymer-jsonp#>=0.3.0",
-    "core-elements": "Polymer/core-elements#^0.5.5",
-    "core-scroll-threshold": "Polymer/core-scroll-threshold#^0.5.5",
-    "paper-item": "Polymer/paper-item#^0.5.5"
+    "iron-jsonp-library": "polymerElements/iron-jsonp-library#>=1.0.0",
+    "paper-item": "PolymerElements/paper-item#^1.0.0"
   }
 }

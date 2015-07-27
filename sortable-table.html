@@ -56,7 +56,7 @@ if (!Array.isArray) {
 }
 </script>
 <link rel="import" href="../polymer/polymer.html">
-<link rel="import" href="../core-dropdown/core-dropdown.html">
+<link rel="import" href="../iron-dropdown/iron-dropdown.html">
 <link rel="import" href="html-echo.html">
 
 <script src="columnDragMixin.js"></script>
@@ -66,8 +66,8 @@ if (!Array.isArray) {
 <script src="../json5/lib/json5.js"></script>
 <script src="../time-elements/time-elements.js"></script>
 
-<polymer-element
-    name="sortable-table"
+<dome-module
+    id="sortable-table"
     attributes="
         args
         cellTemplate
@@ -96,7 +96,7 @@ if (!Array.isArray) {
 >
     <template>
         <content select='[role="datasource"]'></content>
-        <content select="core-scroll-threshold"></content>
+        <!-- <content select="core-scroll-threshold"></content> -->
         <style>
         :host {
             display:block;
@@ -271,8 +271,8 @@ if (!Array.isArray) {
         </template>
 
         <template id="simplePager">
-            <div class="simplePager" horizontal layout center>
-                <span flex>{{dataSize}} Results</span>
+            <div class="simplePager" class="horizontal layout center">
+                <span class="flex">{{dataSize}} Results</span>
                 <button disabled?="{{page<=1}}" class="btn btn-default btn-sm" on-click="{{moveToPreviousPage}}"></button>
                 <span>{{page}} of {{lastPage}}</span>
                 <button disabled?="{{page>=lastPage}}" class="btn btn-default btn-sm" on-click="{{moveToNextPage}}"></button>
@@ -292,7 +292,7 @@ if (!Array.isArray) {
         </template>
 
         <template id="defaultPager">
-            <div class="defaultPager" horizontal layout center>
+            <div class="defaultPager horizontal layout center">
                 <div class="btn-group">
                     <button disabled?="{{page==1}}" class="btn btn-default btn-sm" on-click="{{moveToFirstPage}}"></button><!--
                     --><button disabled?="{{page<=1}}" class="btn btn-default btn-sm" on-click="{{moveToPreviousPage}}"></button>
@@ -308,7 +308,7 @@ if (!Array.isArray) {
                     <button disabled?="{{page>=lastPage}}" class="btn btn-default btn-sm" on-click="{{moveToNextPage}}"></button><!--
                     --><button disabled?="{{page==lastPage}}" class="btn btn-default btn-sm" on-click="{{moveToLastPage}}"></button>
                 </div>
-                <span flex style="text-align:right;margin-right:6px;">Displaying {{page > lastPage ? (lastPage-1) * pageSize + 1 : ((page - 1) * pageSize) + 1}} - {{page >= lastPage ? dataSize : page * pageSize}} of {{dataSize}}</span>
+                <span class="flex" style="text-align:right;margin-right:6px;">Displaying {{page > lastPage ? (lastPage-1) * pageSize + 1 : ((page - 1) * pageSize) + 1}} - {{page >= lastPage ? dataSize : page * pageSize}} of {{dataSize}}</span>
             </div>
         </template>
 
